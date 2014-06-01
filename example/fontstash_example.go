@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/TheOnly92/fontstash.go/fontstash"
 	"github.com/go-gl/gl"
 	glfw "github.com/go-gl/glfw3"
-    fontstash "github.com/TheOnly92/fontstash.go"
 	"runtime"
 )
 
