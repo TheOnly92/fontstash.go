@@ -3,8 +3,7 @@ package main
 import (
 	"github.com/go-gl/gl"
 	glfw "github.com/go-gl/glfw3"
-	//"os"
-	fontstash "./fontstash.go"
+    fontstash "github.com/TheOnly92/fontstash.go"
 	"runtime"
 )
 

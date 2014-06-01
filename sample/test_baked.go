@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-	"./truetype"
+    "github.com/TheOnly92/fontstash.go/truetype"
 	"io/ioutil"
 )
 

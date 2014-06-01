@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./truetype"
+    "github.com/TheOnly92/fontstash.go/truetype"
 	"image"
 	"image/png"
 	"io/ioutil"

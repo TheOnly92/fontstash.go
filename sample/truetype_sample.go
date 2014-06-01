@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./truetype"
+	"github.com/TheOnly92/fontstash.go/truetype"
 	"github.com/go-gl/gl"
 	glfw "github.com/go-gl/glfw3"
 	"io/ioutil"
@@ -42,22 +42,6 @@ func main() {
 
 	gl.ClearColor(0.3, 0.3, 0.32, 1.)
 
-	/*
-		file, err := os.Open("test.png")
-		if err != nil {
-			panic(err)
-		}
-		defer file.Close()
-		img, err := png.Decode(file)
-		if err != nil {
-			panic(err)
-		}
-		tmp := gl.GenTexture()
-		tmp.Bind(gl.TEXTURE_2D)
-		gl.TexEnvf(gl.TEXTURE_ENV, gl.TEXTURE_ENV_MODE, gl.MODULATE)
-		gl.TexImage2D(gl.TEXTURE_2D, 0, gl.ALPHA, 512, 512, 0, gl.ALPHA, gl.UNSIGNED_BYTE, img.(*image.Gray).Pix)
-	*/
-
 	for !window.ShouldClose() {
 		gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 		gl.MatrixMode(gl.PROJECTION)
@@ -69,21 +53,6 @@ func main() {
 		gl.Color4ub(255, 255, 255, 255)
 		gl.Enable(gl.BLEND)
 		gl.BlendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
-
-		/*
-			gl.TexParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
-			tmp.Bind(gl.TEXTURE_2D)
-			gl.Begin(gl.QUADS)
-			gl.TexCoord2f(-1, -1)
-			gl.Vertex2i(0, 0)
-			gl.TexCoord2f(-1, 1)
-			gl.Vertex2i(0, 512)
-			gl.TexCoord2f(1, 1)
-			gl.Vertex2i(512, 512)
-			gl.TexCoord2f(1, -1)
-			gl.Vertex2i(512, 0)
-			gl.End()
-		*/
 
 		my_print(100, 100, "The quick brown fox jumps over the fence", ftex, cdata)
 
