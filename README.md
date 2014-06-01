@@ -10,8 +10,8 @@ Font Stash was originally created and [published](http://digestingduck.blogspot.
 
 Install using the "go get" command:
 
-    go get github.com/TheOnly92/fontstash.go
+    go get github.com/TheOnly92/fontstash.go/fontstash
 
 ## Documentation
 
-- [API Reference](http://godoc.org/github.com/theonly92/fontstash.go)
+- [API Reference](http://godoc.org/github.com/TheOnly92/fontstash.go/fontstash)
