@@ -382,6 +382,40 @@ func (stash *Stash) GetFontByIdx(idx int) *Font {
 	return nil
 }
 
+func (stash *Stash) GetAdvance(idx int, size float64, s string) float64 {
+	isize := int16(size * 10)
+
+	var fnt *Font
+	for _, f := range stash.fonts {
+		if f.idx == idx {
+			fnt = f
+			break
+		}
+	}
+	if fnt == nil {
+		return 0
+	}
+	if fnt.fType != BMFONT && len(fnt.data) == 0 {
+		return 0
+	}
+
+	x := float64(0)
+
+	b := []byte(s)
+	for len(b) > 0 {
+		r, size := utf8.DecodeRune(b)
+		glyph := stash.GetGlyph(fnt, int(r), isize)
+		if glyph == nil {
+			b = b[size:]
+			continue
+		}
+		x, _, _ = stash.GetQuad(fnt, glyph, isize, x, 0)
+		b = b[size:]
+	}
+
+	return x
+}
+
 func (stash *Stash) DrawText(idx int, size, x, y float64, s string) (dx float64) {
 	isize := int16(size * 10)
 
